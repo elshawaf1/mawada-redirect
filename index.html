@@ -18,11 +18,11 @@ a{color:#3B82F6}
 </head>
 <body>
 <div class="card">
-<h1>مودة فون</h1>
-<p>إعادة تعيين كلمة المرور</p>
+<h1>&#1605;&#1608;&#1583;&#1577; &#1601;&#1608;&#1606;</h1>
+<p>&#1573;&#1593;&#1575;&#1583;&#1577; &#1578;&#1593;&#1610;&#1610;&#1606; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;</p>
 <div id="app">
-<button class="btn" id="openBtn">فتح التطبيق</button>
-<p class="msg" id="status">جاري فتح التطبيق...</p>
+<a class="btn" id="openBtn" href="#">&#1601;&#1578;&#1581; &#1575;&#1604;&#1578;&#1591;&#1576;&#1610;&#1602;</a>
+<p class="msg" id="status"></p>
 </div>
 </div>
 <script>
@@ -32,12 +32,11 @@ var p=new URLSearchParams(h);
 var at=p.get("access_token");
 var rt=p.get("refresh_token");
 if(at&&rt){
-var dl="mawada://reset-password#access_token="+at+"&refresh_token="+rt;
-document.getElementById("openBtn").onclick=function(){location.href=dl};
-setTimeout(function(){location.href=dl},300);
-setTimeout(function(){document.getElementById("status").innerHTML="لم يفتح التطبيق? <a href=\'"+dl+"\'>"+'اضغط هنا'</a>},4000);
+var dl="mawada://reset-password"+"%23"+"access_token="+encodeURIComponent(at)+"&refresh_token="+encodeURIComponent(rt);
+document.getElementById("openBtn").href=dl;
+document.getElementById("status").innerHTML="&#1575;&#1590;&#1594;&#1591; &#1593;&#1583;&#1575;&#1603; &#1575;&#1604;&#1586;&#1585; &#1601;&#1608;&#1602; &#1575;&#1604;&#1578;&#1591;&#1576;&#1610;&#1602; &#1604;&#1578;&#1581;&#1583;&#1610;&#1579; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;";
 }else{
-document.getElementById("app").innerHTML="<p class=err>رابط غير صالح</p>";
+document.getElementById("app").innerHTML="<p class=err>&#1585;&#1575;&#1576;&#1591; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;</p>";
 }
 })();
 </script>
